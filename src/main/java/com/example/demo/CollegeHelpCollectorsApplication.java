@@ -14,12 +14,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.ClassPathResource;
 
 import CollegePageParser.Parser;
+import CollegePageParser.TuitionParser;
 
 @SpringBootApplication
 public class CollegeHelpCollectorsApplication {
 
 	public static void main(String[] args) throws IOException {
 		Parser parse = new Parser("UniversityOfWashington/UW.html");
-
+		TuitionParser tuition = new TuitionParser();
+		tuition.scrapeUWTuition("UniversityOfWashington/Tuition/Student budgets _ Student Financial Aid.html");
 	}
 }
